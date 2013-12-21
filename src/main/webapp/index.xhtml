@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Domotique reporting</title>
+ 
+
+    </h:head>
+   
+             
+           
+ 
+                      
+      <p:layout fullPage="true">  
+  
+          <p:layoutUnit position="north" size="100" style="alignment-adjust: central;" header="----------------------------------------------------------------------------------------DOMOTIQUE----------------------------------------------------------------------------------------" resizable="true"  collapsible="false">  
+        <center>  <h:outputText style="font-family: georgia;" value="Le terme domotique est composé du regroupement de deux mots. Domo issu du latin Domus, qui signifie maison, et automatique. La domotique regroupe donc l'ensemble des 
+                                techniques et technologies permettant l'automatisation et l'amélioration 
+                                des tâches au sein d'une maison ou d'un appartement. " />  </center>
+    </p:layoutUnit>  
+  
+    <p:layoutUnit position="south" size="100" header="Bottom" resizable="true" closable="true" collapsible="true">  
+        <h:outputText value="South unit content." />  
+    </p:layoutUnit>  
+  
+    <p:layoutUnit position="west" size="400" header="Top 10 auteurs">  
+         <p:barChart id="basic" value="#{chartBean.categoryModel}" legendPosition="ne"  
+            title="Basic Bar Chart" orientation="horizontal" min="0" max="10" style="height:300px;width:400px;color:white;"  />  
+    </p:layoutUnit>  
+  
+    <p:layoutUnit position="east" size="400" header="Top 10 mots clé" resizable="true" closable="true" collapsible="true" effect="drop">  
+        <p:donutChart id="custom" value="#{chartBean1.donutModel}"   
+            legendPosition="e" sliceMargin="5" showDataLabels="true" dataFormat="value" shadow="false"  
+            title="Custom Options" style="width:400px;height:300px" />  
+           
+    </p:layoutUnit>  
+  
+    <p:layoutUnit  position="center">  
+        <body>
+          
+        </body>
+    </p:layoutUnit>  
+  
+</p:layout>       
+
+</html>
+

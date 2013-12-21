@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 16, 2013 11:52:33 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="classes.Analyse" table="analyse" catalog="domotique">
+        <id name="idAnalyse" type="java.lang.Integer">
+            <column name="idAnalyse" />
+            <generator class="identity" />
+        </id>
+        <property name="codeAnalyse" type="string">
+            <column name="codeAnalyse" length="15" not-null="true" />
+        </property>
+        <property name="nomAnalyse" type="string">
+            <column name="nomAnalyse" length="30" not-null="true" />
+        </property>
+        <property name="domainAnalyse" type="string">
+            <column name="domainAnalyse" length="30" not-null="true" />
+        </property>
+        <set name="analysechamps" inverse="true">
+            <key>
+                <column name="idAnalyse" not-null="true" />
+            </key>
+            <one-to-many class="classes.Analysechamp" />
+        </set>
+    </class>
+</hibernate-mapping>

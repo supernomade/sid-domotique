@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 16, 2013 11:52:33 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="classes.Items" table="items" catalog="domotique">
+        <id name="idItem" type="java.lang.Integer">
+            <column name="idItem" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="analysechamp" class="classes.Analysechamp" fetch="select">
+            <column name="idAnalyseChamp" not-null="true" />
+        </many-to-one>
+        <property name="nomLong" type="string">
+            <column name="nom_long" length="40" not-null="true" />
+        </property>
+        <property name="numeroItem" type="string">
+            <column name="numero_item" length="50" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

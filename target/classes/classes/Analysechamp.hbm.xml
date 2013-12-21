@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 16, 2013 11:52:33 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="classes.Analysechamp" table="analysechamp" catalog="domotique">
+        <id name="idAnalyseChamp" type="java.lang.Integer">
+            <column name="idAnalyseChamp" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="analyse" class="classes.Analyse" fetch="select">
+            <column name="idAnalyse" not-null="true" />
+        </many-to-one>
+        <many-to-one name="champs" class="classes.Champs" fetch="select">
+            <column name="numero_champ" not-null="true" />
+        </many-to-one>
+        <set name="itemses" inverse="true">
+            <key>
+                <column name="idAnalyseChamp" not-null="true" />
+            </key>
+            <one-to-many class="classes.Items" />
+        </set>
+    </class>
+</hibernate-mapping>

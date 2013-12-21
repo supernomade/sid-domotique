@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 16, 2013 11:52:33 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="classes.Coocurrences" table="coocurrences" catalog="domotique">
+        <id name="idCoocurrence" type="java.lang.Integer">
+            <column name="idCoocurrence" />
+            <generator class="identity" />
+        </id>
+        <property name="numero1" type="int">
+            <column name="numero_1" not-null="true" />
+        </property>
+        <property name="numero2" type="int">
+            <column name="numero_2" not-null="true" />
+        </property>
+        <property name="coOcurrence" type="int">
+            <column name="co_ocurrence" not-null="true" />
+        </property>
+        <property name="date" type="int">
+            <column name="date" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
